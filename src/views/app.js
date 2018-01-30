@@ -12,10 +12,10 @@ var AppView = Backbone.View.extend({
     this.$el.html(this.template());
     var vidList = new VideoListView({el: $('.list'), collection: this.videos});
     vidList.render();
-    this.videos.forEach(function(elem) {
-      var vid = new VideoListEntryView({el: $('.video-list'), model: elem});
-      vid.render();
-    });
+    // this.videos.forEach(function(elem) {
+    //   var vid = new VideoListEntryView({el: $('.video-list'), model: elem});
+    //   vid.render();
+    // });
     var vidPlayer = new VideoPlayerView({el: $('.player'), model: this.videos.on('select')});
     vidPlayer.render();
     // this.videos.on('select', vidPlayer.render);
