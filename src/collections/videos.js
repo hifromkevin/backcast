@@ -4,7 +4,7 @@ var Videos = Backbone.Collection.extend({
 
   initialize: function() {
     // your code here
-    this.on('change', () => {
+    this.on('select', () => {
       this.sort();
     });
   },
@@ -29,5 +29,9 @@ var Videos = Backbone.Collection.extend({
 //     this.comparator = field;
 //     this.sort();
 //   }
+
+// });
+
+
 
 // });

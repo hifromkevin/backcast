@@ -1,11 +1,13 @@
 var VideoPlayerView = Backbone.View.extend({
-
+  //model: 
   initialize: function() {
     // check for selected video
     // render that selection
 
     // 'select' from VideoListEntryView
     //$()
+  
+    this.render();
   },
 
   render: function() {
