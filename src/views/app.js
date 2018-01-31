@@ -3,6 +3,9 @@ var AppView = Backbone.View.extend({
 
   initialize: function() {
     this.videos = new Videos(window.exampleVideoData);
+    // this.listenTo(this.collection, 'select', function() {
+    //   console.log('clicked BRUH');
+    // });
     // this.collection = videos;
     //this.model.on('select', this.render, this);
     this.render();
@@ -16,10 +19,14 @@ var AppView = Backbone.View.extend({
     //   var vid = new VideoListEntryView({el: $('.video-list'), model: elem});
     //   vid.render();
     // });
-    var vidPlayer = new VideoPlayerView({el: $('.player'), model: this.videos.on('select')});
-    vidPlayer.render();
+    new VideoPlayerView({
+      el: this.$('.player'),
+      model: this.videos.at(0),
+      collection: this.videos
+    }).render();
+    //vidPlayer.render();
     // this.videos.on('select', vidPlayer.render);
-    var searchBar = new SearchView({ el: $('.search'), collection: this.videos });
+    var searchBar = new SearchView({ el: $('.search') });
     searchBar.render();
     return this;
   },
